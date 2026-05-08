@@ -1,0 +1,270 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "IBG Onboarding Assessment Questionnaire",
+  "description": "Квалификационный опрос для определения персональной программы обучения Claude. Заполняется один раз перед началом обучения.",
+  "version": "1.0",
+  "estimated_completion_minutes": 5,
+
+  "intro_text_ru": "Чтобы собрать программу обучения именно под вас, ответьте на 5 вопросов. Это займёт 5 минут. Программа будет состоять из реальных курсов Anthropic Academy с переводом на русский и практическими заданиями под ваши задачи в IBG.",
+
+  "questions": [
+
+    {
+      "id": "full_name",
+      "step": 1,
+      "type": "text",
+      "title_ru": "Как вас зовут?",
+      "subtitle_ru": "Имя и фамилия — для сертификата по итогам обучения.",
+      "required": true,
+      "max_length": 100,
+      "stored_in": "ob_user_assessments.full_name"
+    },
+
+    {
+      "id": "role",
+      "step": 2,
+      "type": "single_select",
+      "title_ru": "Какая ваша должность в IBG?",
+      "subtitle_ru": "Выберите одну. От этого зависит, какие курсы попадут в программу.",
+      "required": true,
+      "stored_in": "ob_user_assessments.role_id",
+      "options_source": "ob_roles",
+      "options_display": "title_ru",
+      "ui_hint": "Сгруппировать по department для удобства восприятия:\n- Продажи: Агент по недвижимости\n- Аренда: Агент по аренде, Руководитель отдела аренды\n- Управляющая компания: Сотрудник УК, Руководитель по собственникам и OTA\n- Менеджмент: Руководитель Main Dance Team\n- Маркетинг: Маркетинг / Контент\n- HR: Отдел найма / HR\n- Контроль качества: QC\n- Колл-центр: Колл-центр\n- Innovations: Innovations / Разработка"
+    },
+
+    {
+      "id": "ai_level",
+      "step": 3,
+      "type": "single_select_with_description",
+      "title_ru": "Какой у вас опыт работы с AI?",
+      "subtitle_ru": "Честно: от ответа зависит глубина программы.",
+      "required": true,
+      "stored_in": "ob_user_assessments.ai_level_id",
+      "options_source": "ob_ai_levels",
+      "options_display": "title_ru",
+      "options_description": "description_ru",
+      "ui_hint": "Показать ВСЕ три варианта с расшифровкой description_ru. Не делать радио-кнопки — это карточки с описанием. Внизу каждой карточки — короткий пример: 'Если выберете это — программа займёт ~9 часов и будет про базу.'"
+    },
+
+    {
+      "id": "job_description",
+      "step": 4,
+      "type": "long_text",
+      "title_ru": "Расскажите своими словами, чем конкретно вы занимаетесь",
+      "subtitle_ru": "2-4 предложения. Это поможет подобрать примеры в практических заданиях именно под вашу работу.",
+      "required": true,
+      "min_length": 50,
+      "max_length": 1000,
+      "placeholder_ru": "Например: \"Продаю новостройки в Пхукете иностранным инвесторам. В основном — русскоязычные и англоязычные клиенты, ищут от $300K. 70% работы — переписка в WhatsApp, 30% — показы и встречи.\"",
+      "stored_in": "ob_user_assessments.job_description_ru"
+    },
+
+    {
+      "id": "pain_points",
+      "step": 5,
+      "type": "structured_list",
+      "title_ru": "Какие 3-5 задач отнимают у вас больше всего времени?",
+      "subtitle_ru": "Под эти задачи мы подберём практические упражнения. Чем конкретнее — тем точнее программа.",
+      "required": true,
+      "min_items": 3,
+      "max_items": 5,
+      "stored_in": "ob_user_assessments.pain_points",
+      "item_schema": {
+        "task": {
+          "type": "text",
+          "label_ru": "Что за задача",
+          "placeholder_ru": "Например: \"Написать follow-up клиенту, который замолчал\"",
+          "max_length": 200,
+          "required": true
+        },
+        "hours_per_week": {
+          "type": "number",
+          "label_ru": "Сколько часов в неделю отнимает",
+          "min": 0,
+          "max": 80,
+          "required": true
+        },
+        "frequency": {
+          "type": "single_select",
+          "label_ru": "Как часто",
+          "options": [
+            {"value": "daily_multiple", "label_ru": "Несколько раз в день"},
+            {"value": "daily", "label_ru": "Каждый день"},
+            {"value": "weekly_multiple", "label_ru": "Несколько раз в неделю"},
+            {"value": "weekly", "label_ru": "Раз в неделю"},
+            {"value": "rarely", "label_ru": "Реже"}
+          ],
+          "required": true
+        }
+      },
+      "ui_hint": "Использовать typical_pain_points из выбранной роли как подсказки/шаблоны. Например, для агента показать: 'Похожие боли других агентов: переводы сообщений, КП, follow-up...'. Можно кликом добавить как заготовку. Минимум 3, максимум 5 пунктов."
+    },
+
+    {
+      "id": "tools_used",
+      "step": 6,
+      "type": "multi_select",
+      "title_ru": "С какими инструментами вы работаете каждый день?",
+      "subtitle_ru": "Отметьте все, которыми пользуетесь регулярно. Это поможет понять, где Claude встроится в ваш workflow.",
+      "required": true,
+      "min_items": 1,
+      "stored_in": "ob_user_assessments.tools_used",
+      "options": [
+        {"value": "amocrm", "label_ru": "amoCRM"},
+        {"value": "whatsapp", "label_ru": "WhatsApp"},
+        {"value": "telegram", "label_ru": "Telegram"},
+        {"value": "wazzup", "label_ru": "Wazzup"},
+        {"value": "notion", "label_ru": "Notion"},
+        {"value": "google_workspace", "label_ru": "Google Workspace (Drive, Docs, Sheets, Calendar, Gmail)"},
+        {"value": "google_sheets", "label_ru": "Google Sheets отдельно"},
+        {"value": "slack", "label_ru": "Slack"},
+        {"value": "airbnb", "label_ru": "Airbnb"},
+        {"value": "booking", "label_ru": "Booking.com"},
+        {"value": "instagram", "label_ru": "Instagram"},
+        {"value": "threads", "label_ru": "Threads"},
+        {"value": "meta_ads", "label_ru": "Meta Ads (Facebook/Instagram)"},
+        {"value": "google_ads", "label_ru": "Google Ads"},
+        {"value": "linkedin", "label_ru": "LinkedIn"},
+        {"value": "zoom", "label_ru": "Zoom / Google Meet"},
+        {"value": "n8n", "label_ru": "n8n"},
+        {"value": "claude_code", "label_ru": "Claude Code"},
+        {"value": "supabase", "label_ru": "Supabase"},
+        {"value": "github", "label_ru": "GitHub"},
+        {"value": "vercel", "label_ru": "Vercel"},
+        {"value": "phone", "label_ru": "Телефон (звонки)"},
+        {"value": "other", "label_ru": "Другое"}
+      ],
+      "ui_hint": "Префильтровать по common_tools выбранной роли (показать сверху, отметить по умолчанию). Остальные — ниже."
+    },
+
+    {
+      "id": "preferred_language",
+      "step": 7,
+      "type": "single_select",
+      "title_ru": "На каком языке вам удобнее проходить курсы?",
+      "subtitle_ru": "Контент будет на выбранном языке, но оригинальные курсы Anthropic — на английском, мы прилагаем перевод.",
+      "required": true,
+      "stored_in": "ob_user_assessments.preferred_language",
+      "options": [
+        {"value": "ru", "label_ru": "Только русский"},
+        {"value": "en", "label_ru": "Только английский (как в оригинале Anthropic)"},
+        {"value": "both", "label_ru": "Оба: показать русский с возможностью переключиться на оригинал"}
+      ],
+      "default": "ru"
+    },
+
+    {
+      "id": "weekly_time_budget",
+      "step": 8,
+      "type": "single_select",
+      "title_ru": "Сколько времени в неделю готовы выделять на обучение?",
+      "subtitle_ru": "Реалистично. Программа подстроится под ваш темп.",
+      "required": true,
+      "stored_in": "ob_user_assessments.weekly_time_budget_hours",
+      "options": [
+        {"value": 2, "label_ru": "2-3 часа в неделю (комфортный темп, до 4-5 недель)"},
+        {"value": 5, "label_ru": "5-7 часов в неделю (стандарт, 1-2 недели)"},
+        {"value": 10, "label_ru": "10+ часов в неделю (fast track, до недели)"},
+        {"value": 1, "label_ru": "Меньше 2 часов (растянем на месяц+)"}
+      ]
+    },
+
+    {
+      "id": "learning_goal",
+      "step": 9,
+      "type": "single_select",
+      "title_ru": "Какая у вас главная цель?",
+      "subtitle_ru": "Один пункт. От этого зависит, на что делать упор в практике.",
+      "required": true,
+      "stored_in": "ob_user_assessments.learning_goal",
+      "options": [
+        {"value": "general_boost",
+         "label_ru": "Общее ускорение работы",
+         "description_ru": "Хочу делать ту же работу быстрее и качественнее с помощью Claude."},
+        {"value": "specific_project",
+         "label_ru": "Конкретный проект",
+         "description_ru": "У меня есть конкретная задача/проект, который хочу решить с Claude. Опишу в практике."},
+        {"value": "build_automation",
+         "label_ru": "Построить свою автоматизацию",
+         "description_ru": "Хочу сам собрать AI-агента/автоматизацию под свои задачи (Skills, Projects, в перспективе MCP)."},
+        {"value": "manage_team",
+         "label_ru": "Внедрить AI в свою команду",
+         "description_ru": "Я руководитель, хочу не только сам освоить, но и научить команду."}
+      ]
+    },
+
+    {
+      "id": "claude_subscription",
+      "step": 10,
+      "type": "single_select",
+      "title_ru": "Есть ли у вас подписка Claude?",
+      "subtitle_ru": "От этого зависит, какие фичи будут доступны на практике.",
+      "required": true,
+      "stored_in": "ob_user_assessments.has_claude_subscription",
+      "options": [
+        {"value": "team",
+         "label_ru": "Team (корпоративный)",
+         "description_ru": "Есть всё: Projects, Connectors, Research mode, безлимит."},
+        {"value": "pro",
+         "label_ru": "Pro (личная)",
+         "description_ru": "Есть большинство фич, лимит сообщений выше Free."},
+        {"value": "free",
+         "label_ru": "Free (бесплатно)",
+         "description_ru": "Базовый Claude. Часть фич недоступна, но 80% курса можно пройти."},
+        {"value": "unknown",
+         "label_ru": "Не знаю / у меня нет",
+         "description_ru": "Поможем разобраться в первом уроке."}
+      ],
+      "default": "unknown"
+    }
+  ],
+
+  "post_submit": {
+    "action": "call_db_function",
+    "function": "fn_generate_user_program",
+    "args": ["user_id"],
+    "redirect_to_ru": "Ваша персональная программа",
+    "show_summary": true
+  },
+
+  "summary_template_ru": {
+    "title": "Ваша программа обучения готова",
+    "blocks": [
+      {
+        "type": "header",
+        "content": "{program_title}"
+      },
+      {
+        "type": "stat",
+        "label": "Курсов в программе",
+        "value": "{course_count}"
+      },
+      {
+        "type": "stat",
+        "label": "Общее время",
+        "value": "{estimated_hours} часов"
+      },
+      {
+        "type": "stat",
+        "label": "Темп",
+        "value": "{weekly_pace} часов/неделя → готово за {weeks_to_complete} недель"
+      },
+      {
+        "type": "course_list",
+        "title": "Что вы пройдёте",
+        "items_from": "ob_user_program_courses"
+      },
+      {
+        "type": "pain_points_summary",
+        "title": "Ваши боли, на которые мы будем фокусироваться",
+        "items_from": "ob_user_assessments.pain_points"
+      },
+      {
+        "type": "cta",
+        "label": "Начать первый курс",
+        "action": "go_to_first_course"
+      }
+    ]
+  }
+}

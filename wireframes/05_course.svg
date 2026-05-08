@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 900" font-family="Inter, sans-serif">
+  <rect width="800" height="900" fill="#fafaf9"/>
+  <rect x="0" y="0" width="800" height="60" fill="white" stroke="#e2e8f0"/>
+  <text x="40" y="38" font-size="18" font-weight="bold" fill="#0f172a">AI-transformation</text>
+  <text x="40" y="105" font-size="13" fill="#64748b">Моя программа · Claude 101: основы</text>
+  <text x="40" y="145" font-size="32" font-weight="700" fill="#0f172a">Claude 101: основы</text>
+  <text x="40" y="172" font-size="14" fill="#64748b">12 уроков · 4 часа · 30% завершено</text>
+  <rect x="40" y="190" width="720" height="6" rx="3" fill="#e2e8f0"/>
+  <rect x="40" y="190" width="216" height="6" rx="3" fill="#16a34a"/>
+  <text x="40" y="240" font-size="18" font-weight="600" fill="#0f172a">Модуль 1: Знакомство с Claude</text>
+  <rect x="40" y="260" width="720" height="56" rx="8" fill="white" stroke="#16a34a"/>
+  <circle cx="65" cy="288" r="10" fill="#16a34a"/>
+  <text x="65" y="293" text-anchor="middle" font-size="11" fill="white">✓</text>
+  <text x="90" y="285" font-size="15" font-weight="500" fill="#0f172a">Урок 1: Что такое Claude</text>
+  <text x="90" y="303" font-size="12" fill="#64748b">17 мин · Завершён</text>
+  <rect x="40" y="328" width="720" height="56" rx="8" fill="white" stroke="#16a34a"/>
+  <circle cx="65" cy="356" r="10" fill="#16a34a"/>
+  <text x="65" y="361" text-anchor="middle" font-size="11" fill="white">✓</text>
+  <text x="90" y="353" font-size="15" font-weight="500" fill="#0f172a">Урок 2: Ваш первый рабочий диалог</text>
+  <text x="90" y="371" font-size="12" fill="#64748b">23 мин · Завершён</text>
+  <text x="40" y="430" font-size="18" font-weight="600" fill="#0f172a">Модуль 2: Качественные результаты</text>
+  <rect x="40" y="450" width="720" height="56" rx="8" fill="white" stroke="#3b82f6" stroke-width="2"/>
+  <circle cx="65" cy="478" r="10" fill="#3b82f6"/>
+  <text x="65" y="483" text-anchor="middle" font-size="13" fill="white">▶</text>
+  <text x="90" y="475" font-size="15" font-weight="600" fill="#0f172a">Урок 3: Четыре кита хорошего запроса</text>
+  <text x="90" y="493" font-size="12" fill="#3b82f6">26 мин · В процессе</text>
+  <rect x="40" y="518" width="720" height="56" rx="8" fill="white" stroke="#e2e8f0"/>
+  <circle cx="65" cy="546" r="10" fill="white" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="90" y="543" font-size="15" fill="#475569">Урок 4: Какой режим Claude когда</text>
+  <text x="90" y="561" font-size="12" fill="#94a3b8">16 мин · Не начат</text>
+  <text x="40" y="620" font-size="18" font-weight="600" fill="#0f172a">Модуль 3: Организация работы</text>
+  <rect x="40" y="640" width="720" height="56" rx="8" fill="white" stroke="#e2e8f0"/>
+  <circle cx="65" cy="668" r="10" fill="white" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="90" y="665" font-size="15" fill="#475569">Урок 5: Projects — постоянный контекст</text>
+  <text x="90" y="683" font-size="12" fill="#94a3b8">22 мин · Не начат</text>
+  <rect x="40" y="708" width="720" height="56" rx="8" fill="white" stroke="#e2e8f0"/>
+  <circle cx="65" cy="736" r="10" fill="white" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="90" y="733" font-size="15" fill="#475569">Урок 6: Artifacts — окно для длинного контента</text>
+  <text x="90" y="751" font-size="12" fill="#94a3b8">15 мин · Не начат</text>
+</svg>

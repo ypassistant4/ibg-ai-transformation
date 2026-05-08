@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 700" font-family="Inter, sans-serif">
+  <rect width="800" height="700" fill="#fafaf9"/>
+  <rect x="0" y="0" width="800" height="60" fill="white" stroke="#e2e8f0"/>
+  <text x="40" y="38" font-size="18" font-weight="bold" fill="#0f172a">AI-transformation</text>
+  <text x="40" y="100" font-size="14" fill="#64748b">Шаг 2 из 10</text>
+  <rect x="40" y="115" width="720" height="6" rx="3" fill="#e2e8f0"/>
+  <rect x="40" y="115" width="144" height="6" rx="3" fill="#0f172a"/>
+  <text x="400" y="200" text-anchor="middle" font-size="28" font-weight="600" fill="#0f172a">Какая ваша должность в IBG?</text>
+  <text x="400" y="232" text-anchor="middle" font-size="14" fill="#64748b">От этого зависит, какие курсы попадут в программу</text>
+  <rect x="200" y="280" width="400" height="56" rx="8" fill="white" stroke="#cbd5e1"/>
+  <circle cx="225" cy="308" r="8" fill="white" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="250" y="313" font-size="15" fill="#0f172a">🏠 Агент по продажам недвижимости</text>
+  <rect x="200" y="350" width="400" height="56" rx="8" fill="white" stroke="#0f172a" stroke-width="2"/>
+  <circle cx="225" cy="378" r="8" fill="#0f172a"/>
+  <text x="250" y="383" font-size="15" font-weight="500" fill="#0f172a">🏘 Агент по аренде</text>
+  <rect x="200" y="420" width="400" height="56" rx="8" fill="white" stroke="#cbd5e1"/>
+  <circle cx="225" cy="448" r="8" fill="white" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="250" y="453" font-size="15" fill="#0f172a">🎧 Контроль качества (QC)</text>
+  <rect x="200" y="490" width="400" height="56" rx="8" fill="white" stroke="#cbd5e1"/>
+  <circle cx="225" cy="518" r="8" fill="white" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="250" y="523" font-size="15" fill="#0f172a">📣 Маркетинг / Контент</text>
+  <text x="400" y="580" text-anchor="middle" font-size="12" fill="#94a3b8">↓ ещё 7 ролей ↓</text>
+  <rect x="200" y="620" width="120" height="44" rx="8" fill="white" stroke="#cbd5e1"/>
+  <text x="260" y="647" text-anchor="middle" font-size="14" fill="#0f172a">← Назад</text>
+  <rect x="480" y="620" width="120" height="44" rx="8" fill="#0f172a"/>
+  <text x="540" y="647" text-anchor="middle" font-size="14" font-weight="600" fill="white">Далее →</text>
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1100" font-family="Inter, sans-serif">
+  <rect width="800" height="1100" fill="#fafaf9"/>
+  <rect x="0" y="0" width="800" height="60" fill="white" stroke="#e2e8f0"/>
+  <text x="40" y="38" font-size="18" font-weight="bold" fill="#0f172a">AI-transformation</text>
+  <text x="640" y="38" font-size="14" fill="#475569">Войти</text>
+
+  <text x="400" y="180" text-anchor="middle" font-size="44" font-weight="700" fill="#0f172a">AI-transformation</text>
+  <text x="400" y="230" text-anchor="middle" font-size="18" fill="#475569">Программа обучения Claude для команды IBG.</text>
+  <text x="400" y="255" text-anchor="middle" font-size="18" fill="#475569">Персональная программа из 18 курсов на русском.</text>
+
+  <rect x="305" y="295" width="190" height="50" rx="8" fill="#0f172a"/>
+  <text x="400" y="325" text-anchor="middle" font-size="16" font-weight="600" fill="white">У меня есть invite</text>
+  <text x="400" y="375" text-anchor="middle" font-size="13" fill="#94a3b8">Нет invite? Свяжитесь с HR</text>
+
+  <text x="400" y="460" text-anchor="middle" font-size="24" font-weight="600" fill="#0f172a">Как это работает</text>
+
+  <rect x="50" y="500" width="220" height="180" rx="12" fill="white" stroke="#e2e8f0"/>
+  <circle cx="160" cy="555" r="22" fill="#dbeafe"/>
+  <text x="160" y="562" text-anchor="middle" font-size="20">📋</text>
+  <text x="160" y="610" text-anchor="middle" font-size="16" font-weight="600" fill="#0f172a">1. Опрос</text>
+  <text x="160" y="640" text-anchor="middle" font-size="13" fill="#64748b">5-7 минут о вашей</text>
+  <text x="160" y="658" text-anchor="middle" font-size="13" fill="#64748b">роли и задачах</text>
+
+  <rect x="290" y="500" width="220" height="180" rx="12" fill="white" stroke="#e2e8f0"/>
+  <circle cx="400" cy="555" r="22" fill="#dbeafe"/>
+  <text x="400" y="562" text-anchor="middle" font-size="20">✨</text>
+  <text x="400" y="610" text-anchor="middle" font-size="16" font-weight="600" fill="#0f172a">2. Программа</text>
+  <text x="400" y="640" text-anchor="middle" font-size="13" fill="#64748b">Персональный путь</text>
+  <text x="400" y="658" text-anchor="middle" font-size="13" fill="#64748b">из 3-7 курсов</text>
+
+  <rect x="530" y="500" width="220" height="180" rx="12" fill="white" stroke="#e2e8f0"/>
+  <circle cx="640" cy="555" r="22" fill="#dbeafe"/>
+  <text x="640" y="562" text-anchor="middle" font-size="20">📖</text>
+  <text x="640" y="610" text-anchor="middle" font-size="16" font-weight="600" fill="#0f172a">3. Микро-уроки</text>
+  <text x="640" y="640" text-anchor="middle" font-size="13" fill="#64748b">Блоки 5-15 мин</text>
+  <text x="640" y="658" text-anchor="middle" font-size="13" fill="#64748b">с практикой</text>
+
+  <text x="400" y="780" text-anchor="middle" font-size="24" font-weight="600" fill="#0f172a">Что внутри</text>
+  <rect x="50" y="810" width="700" height="220" rx="12" fill="white" stroke="#e2e8f0"/>
+  <text x="80" y="848" font-size="14" fill="#0f172a">✅ 18 курсов Anthropic Academy с русским переводом</text>
+  <text x="80" y="878" font-size="14" fill="#0f172a">✅ Персонализация под 11 ролей IBG</text>
+  <text x="80" y="908" font-size="14" fill="#0f172a">✅ Микро-формат: уроки 12-38 минут с практикой</text>
+  <text x="80" y="938" font-size="14" fill="#0f172a">✅ Андрагогика Ноулза: обучение для взрослых</text>
+  <text x="80" y="968" font-size="14" fill="#0f172a">✅ Сертификат после каждого курса</text>
+
+  <rect x="0" y="1060" width="800" height="40" fill="white" stroke="#e2e8f0"/>
+  <text x="400" y="1085" text-anchor="middle" font-size="12" fill="#94a3b8">AI-transformation · IBG Property · #claude-help</text>
+</svg>

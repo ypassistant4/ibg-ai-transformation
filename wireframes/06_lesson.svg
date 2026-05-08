@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1100" font-family="Inter, sans-serif">
+  <rect width="800" height="1100" fill="#fafaf9"/>
+  <rect x="0" y="0" width="800" height="80" fill="white" stroke="#e2e8f0"/>
+  <text x="40" y="32" font-size="12" fill="#64748b">Claude 101 / Урок 1: Что такое Claude</text>
+  <rect x="40" y="48" width="720" height="6" rx="3" fill="#e2e8f0"/>
+  <rect x="40" y="48" width="240" height="6" rx="3" fill="#0f172a"/>
+  <text x="760" y="38" text-anchor="end" font-size="12" fill="#475569">2/6</text>
+  <rect x="40" y="110" width="720" height="180" rx="12" fill="#fef3c7" stroke="#fcd34d"/>
+  <text x="60" y="142" font-size="13" font-weight="600" fill="#92400e">🎯 ЗАЧЕМ ЭТО ВАМ · 1 МИН</text>
+  <text x="60" y="172" font-size="16" font-weight="600" fill="#0f172a">Прямо сейчас вы тратите часы на задачи,</text>
+  <text x="60" y="195" font-size="16" font-weight="600" fill="#0f172a">которые Claude закрывает за минуты.</text>
+  <text x="60" y="225" font-size="14" fill="#475569">Через 15 минут вы поймёте, подходит ли Claude для ваших</text>
+  <text x="60" y="245" font-size="14" fill="#475569">задач, где он реально поможет, а где соврёт.</text>
+  <rect x="40" y="310" width="720" height="200" rx="12" fill="white" stroke="#e2e8f0"/>
+  <text x="60" y="342" font-size="13" font-weight="600" fill="#3b82f6">🔄 ЧТО У ВАС СЕЙЧАС · 3 МИН</text>
+  <text x="60" y="378" font-size="15" font-weight="500" fill="#0f172a">Подумайте 2 минуты:</text>
+  <text x="60" y="408" font-size="14" fill="#475569">1. Какие 2-3 задачи вы делаете каждую неделю одинаково?</text>
+  <text x="60" y="432" font-size="14" fill="#475569">2. Сколько времени каждая отнимает?</text>
+  <text x="60" y="456" font-size="14" fill="#475569">3. Использовали ChatGPT/AI? Если да — почему перестали?</text>
+  <text x="60" y="486" font-size="13" fill="#94a3b8" font-style="italic">Запишите ответы. К ним вернёмся в конце урока.</text>
+  <rect x="40" y="530" width="720" height="280" rx="12" fill="white" stroke="#e2e8f0"/>
+  <text x="60" y="562" font-size="13" font-weight="600" fill="#16a34a">📺 ВИДЕО + ТРАНСКРИПТ · 5 МИН</text>
+  <rect x="60" y="580" width="680" height="180" rx="8" fill="#0f172a"/>
+  <circle cx="400" cy="670" r="30" fill="white" opacity="0.9"/>
+  <polygon points="392,656 392,684 414,670" fill="#0f172a"/>
+  <text x="400" y="755" text-anchor="middle" font-size="12" fill="#94a3b8">▶ Видео 5:00 · Подключено YouTube</text>
+  <rect x="40" y="830" width="720" height="120" rx="12" fill="white" stroke="#e2e8f0"/>
+  <text x="60" y="862" font-size="13" font-weight="600" fill="#a855f7">💡 ПРИМЕНЕНИЕ В IBG · 2 МИН</text>
+  <text x="60" y="892" font-size="14" fill="#475569">Для агента: перевод сообщений с китайского, КП по проекту,</text>
+  <text x="60" y="912" font-size="14" fill="#475569">follow-up клиентам. Дополнительный блок под вашу роль ↓</text>
+  <text x="60" y="935" font-size="12" fill="#a855f7">+ Применение для агента по аренде</text>
+  <rect x="280" y="990" width="240" height="56" rx="8" fill="#0f172a"/>
+  <text x="400" y="1024" text-anchor="middle" font-size="15" font-weight="600" fill="white">Понятно, далее →</text>
+</svg>

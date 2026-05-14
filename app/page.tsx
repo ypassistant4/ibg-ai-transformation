@@ -1,5 +1,10 @@
 import Link from "next/link";
 import { Award, BookOpen, ClipboardList, Sparkles } from "lucide-react";
+import { createClient } from "@/lib/supabase/server";
+
+// Рендерим на каждый запрос — чтобы счётчик курсов всегда был свежий
+// и чтобы не кешировался во время билда (когда env может быть пустой).
+export const dynamic = "force-dynamic";
 
 const HOW_IT_WORKS = [
   {
@@ -27,7 +32,37 @@ const FEATURES = [
   "Сертификат после завершения каждого курса",
 ];
 
-export default function HomePage() {
+/**
+ * Тестовый health-check Supabase: считаем количество курсов в ob_courses.
+ * Возвращает число при успехе, null если env не настроен или запрос упал.
+ * Никогда не бросает — лендинг должен показываться даже без БД.
+ */
+async function getCoursesCount(): Promise<number | null> {
+  if (
+    !process.env.NEXT_PUBLIC_SUPABASE_URL ||
+    !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  ) {
+    return null;
+  }
+  try {
+    const supabase = await createClient();
+    const { count, error } = await supabase
+      .from("ob_courses")
+      .select("*", { count: "exact", head: true });
+    if (error) {
+      console.error("Supabase health-check failed:", error.message);
+      return null;
+    }
+    return count ?? 0;
+  } catch (e) {
+    console.error("Supabase health-check threw:", e);
+    return null;
+  }
+}
+
+export default async function HomePage() {
+  const coursesCount = await getCoursesCount();
+
   return (
     <>
       <header className="sticky top-0 z-50 w-full border-b border-slate-100 bg-white/80 backdrop-blur">
@@ -123,7 +158,21 @@ export default function HomePage() {
             Поддержка
           </a>
         </div>
+        <p className="mx-auto mt-4 max-w-4xl px-4 text-center text-xs text-slate-400">
+          {coursesCount !== null
+            ? `Подключено к Supabase: ${coursesCount} ${pluralizeCourses(coursesCount)}`
+            : "Supabase: не настроено"}
+        </p>
       </footer>
     </>
   );
+}
+
+/** Склонение слова "курс" по числу (русский). */
+function pluralizeCourses(n: number): string {
+  const mod10 = n % 10;
+  const mod100 = n % 100;
+  if (mod10 === 1 && mod100 !== 11) return "курс";
+  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 10 || mod100 >= 20)) return "курса";
+  return "курсов";
 }

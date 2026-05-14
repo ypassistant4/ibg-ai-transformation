@@ -1,9 +1,10 @@
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { Award, BookOpen, ClipboardList, Sparkles } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 
-// Рендерим на каждый запрос — чтобы счётчик курсов всегда был свежий
-// и чтобы не кешировался во время билда (когда env может быть пустой).
+// Рендерим на каждый запрос — для свежего счётчика курсов и для актуальной
+// проверки сессии (auth-редирект). Без force-dynamic Next.js может закешировать.
 export const dynamic = "force-dynamic";
 
 const HOW_IT_WORKS = [
@@ -61,6 +62,17 @@ async function getCoursesCount(): Promise<number | null> {
 }
 
 export default async function HomePage() {
+  // Залогиненного — сразу на /program. Если опрос не пройден,
+  // защитник middleware на /program → /onboarding пока не реализован,
+  // но дальше реализуем это в самом /program роуте.
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (user) {
+    redirect("/program");
+  }
+
   const coursesCount = await getCoursesCount();
 
   return (
@@ -71,7 +83,7 @@ export default async function HomePage() {
             AI-transformation
           </span>
           <Link
-            href="/signup"
+            href="/login"
             className="text-sm font-medium text-slate-600 transition-colors hover:text-slate-900"
           >
             Войти
@@ -90,7 +102,7 @@ export default async function HomePage() {
           </p>
           <div className="mt-8 flex flex-col items-center gap-3">
             <Link
-              href="/signup"
+              href="/login"
               className="inline-flex items-center justify-center rounded-lg bg-slate-900 px-6 py-3 text-base font-semibold text-white shadow-sm transition-colors hover:bg-slate-800"
             >
               У меня есть invite
